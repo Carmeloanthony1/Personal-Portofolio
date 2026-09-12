@@ -6,7 +6,12 @@
     <title>Home | Carmelo Anthony Portofolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* CSS Wajib Biar Particles Jadi Background Paling Belakang */
+        /* Smooth Scroll saat tombol panah diklik */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Particles Background */
         #particles-js {
             position: fixed;
             width: 100%;
@@ -18,40 +23,126 @@
         }
     </style>
 </head>
-<body class="bg-[#01082d] font-sans relative">
+<body class="bg-[#01082d] font-sans relative text-white">
 
+    <!-- PARTICLES BACKGROUND -->
     <div id="particles-js"></div>
 
-    <nav class="w-full p-4 flex justify-between items-center text-[#ade1fb] font-bold text-xl relative z-10">
-        <a class="cursor-pointer hover:text-blue-400">Home</a>
+    <!-- NAVBAR (STICKY TOP) -->
+    <nav class="w-full p-4 flex justify-between items-center text-[#ade1fb] font-bold text-xl top-0 left-0 z-50 border-b border-[#ade1fb]/10">
+        <a href="#home" class="cursor-pointer hover:text-blue-400">Home</a>
         <div class="flex gap-6 font-semibold">
-            <a class="cursor-pointer hover:text-blue-400">Project</a>
-            <a class="cursor-pointer hover:text-blue-400">Stack</a>
-            <a class="cursor-pointer hover:text-blue-400">Experience</a>
-            <a class="cursor-pointer hover:text-blue-400">Contact</a>
+            <a href="#profile" class="cursor-pointer hover:text-blue-400">About</a>
+            <a href="#project" class="cursor-pointer hover:text-blue-400">Project</a>
+            <a href="#stack" class="cursor-pointer hover:text-blue-400">Stack</a>
+            <a href="#experience" class="cursor-pointer hover:text-blue-400">Experience</a>
+            <a href="#contact" class="cursor-pointer hover:text-blue-400">Contact</a>
         </div>
     </nav>
 
-    <section class="min-h-screen flex items-center justify-center -mt-16 relative z-10">
+    <!-- PAGE 1: HERO SECTION -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative z-10 pt-16">
         <div class="flex flex-row items-center gap-16">
-            <div class="w-60 h-72 rounded-lg shadow-xl flex items-center justify-center text-slate-700 font-semibold overflow-hidden">
+            <div class="w-60 h-72 rounded-lg shadow-xl flex items-center justify-center text-slate-700 font-semibold overflow-hidden border border-[#ade1fb]/20">
                 <img class="w-full h-full object-cover rounded-lg" src="asset/Photo.jpeg" alt="Carmelo Anthony">
             </div>
             <div class="flex flex-col gap-2">
                 <h1 class="text-4xl font-bold text-white">Carmelo Anthony</h1>
                 <h2 class="text-2xl font-bold text-gray-200">Full stack Website Developer</h2>
                 <h2 class="text-xl font-bold text-gray-300">Cyber Security Enthusiast</h2>
-                <div class="flex gap-6 mt-2">
-                    <button class = "cursor-pointer bg-gray-300 p-3 rounded-lg hover:scale-105 transition-all">See my project</button>
-                    <button class = "cursor-pointer bg-gray-300 p-3 rounded-lg hover:scale-105 transition-all">See at my Experience</button>
+                <div class="flex gap-6 mt-4">
+                    <a href="#project" class="cursor-pointer bg-gray-300 text-slate-900 font-semibold px-4 py-2.5 rounded-lg hover:scale-105 transition-all text-sm shadow-md">
+                        See my project
+                    </a>
+                    <a href="#experience" class="cursor-pointer bg-gray-300 text-slate-900 font-semibold px-4 py-2.5 rounded-lg hover:scale-105 transition-all text-sm shadow-md">
+                        See at my Experience
+                    </a>
                 </div>
             </div>
         </div>
+
+        <!-- SCROLL DOWN ARROW -->
         <a href="#profile" class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer text-[#ade1fb] hover:text-white transition-colors">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
             </svg>
         </a>
+    </section>
+
+    <!-- PAGE 2: DETAILED PROFILE SECTION (DASHBOARD GRID STYLE) -->
+    <section id="profile" class="min-h-screen flex items-center justify-center relative z-10 px-6 py-24">
+        <div class="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- CARD KIRI: PROFILE DETAIL -->
+            <div class="lg:col-span-5 bg-[#01082d]/90 p-6 rounded-2xl border border-gray-700/60 shadow-2xl flex flex-col items-center text-center backdrop-blur-md">
+                
+                <!-- Foto Profile Zoom Hover -->
+                <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-[#ade1fb] shadow-lg mb-4 flex-shrink-0 cursor-pointer group">
+                    <img src="asset/Photo.jpeg" alt="Carmelo Anthony" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-125">
+                </div>
+                
+                <h3 class="text-2xl font-bold text-white">Carmelo Anthony</h3>
+                <p class="text-[#ade1fb] font-medium text-sm mb-6">Informatics Student</p>
+
+                <!-- List Info -->
+                <div class="w-full space-y-3 text-sm text-left">
+                    <div class="bg-[#031342]/80 p-3 rounded-xl border border-gray-800 flex justify-between items-center">
+                        <span class="text-gray-400 text-xs">Full Name</span>
+                        <span class="font-semibold text-white">Carmelo Anthony</span>
+                    </div>
+
+                    <div class="bg-[#031342]/80 p-3 rounded-xl border border-gray-800 flex justify-between items-center">
+                        <span class="text-gray-400 text-xs">Institution</span>
+                        <span class="font-semibold text-white">UMN</span>
+                    </div>
+
+                    <div class="bg-[#031342]/80 p-3 rounded-xl border border-gray-800 flex justify-between items-center">
+                        <span class="text-gray-400 text-xs">Location</span>
+                        <span class="font-semibold text-white">Tangerang, ID</span>
+                    </div>
+
+                    <div class="bg-[#031342]/80 p-3 rounded-xl border border-gray-800 flex justify-between items-center">
+                        <span class="text-gray-400 text-xs">Status</span>
+                        <span class="font-semibold text-white">Active Student</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 bg-[#01082d]/90 border border-gray-700/60 shadow-2xl rounded-2xl p-6 backdrop-blur-md flex flex-col justify-between h-full">
+                <div>
+                    <h2 class="text-xl font-bold text-[#ade1fb] mb-2 text-left">My Interests</h2>
+                    <hr class="border-gray-800 mb-6"> 
+
+                    <div class="space-y-4">
+                        <!-- Interest 1: Web Dev -->
+                        <div class="bg-[#031342]/80 p-4 rounded-xl border border-gray-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div>
+                                <h3 class="font-bold text-white text-base">Web Development</h3>
+                                <p class="text-xs text-gray-400">Full-stack web apps, responsive UI, & modular components.</p>
+                            </div>
+                            <a href="#project" class="text-xs font-semibold text-[#ade1fb] px-4 py-2.5 bg-[#01082d] border border-[#ade1fb]/30 rounded-lg hover:bg-[#ade1fb] hover:text-slate-900 transition-all hover:scale-105 text-center whitespace-nowrap">
+                                See Website Projects
+                            </a>
+                        </div>
+
+                        <!-- Interest 2: Cyber Security -->
+                        <div class="bg-[#031342]/80 p-4 rounded-xl border border-gray-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div>
+                                <h3 class="font-bold text-white text-base">Cyber Security</h3>
+                                <p class="text-xs text-gray-400">Linux security environment, & web vulnerability analysis.</p>
+                            </div>
+                            <a href="#experience" class="text-xs font-semibold text-[#ade1fb] px-4 py-2.5 bg-[#01082d] border border-[#ade1fb]/30 rounded-lg hover:bg-[#ade1fb] hover:text-slate-900 transition-all hover:scale-105 text-center whitespace-nowrap">
+                                See CySec Experience
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    
+                </div>
+            </div>
+
+        </div>
     </section>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
