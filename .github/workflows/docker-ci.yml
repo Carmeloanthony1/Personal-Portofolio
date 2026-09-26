@@ -1,0 +1,21 @@
+name : Push Docker Image
+
+on:
+  push:
+    branches:
+        - main
+
+jobs: 
+  autopush:
+    runs-on: ubuntu-latest
+          - name: Checkout Repository
+            uses: actions/checkout@v4
+
+          - name: Push Docker Image
+            uses: docker/build-push-action@v5
+            with:
+              context:
+              push: true
+              tags: | 
+                carmeloanthony1/meloporto:latest
+                carmeloanthony1/meloporto:${{ github.sha }} 
